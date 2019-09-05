@@ -61,10 +61,10 @@ nav.append(a);
 nav.prepend(b);
 
 // Cta Section
-
-document.querySelector('.cta .cta-text h1').textContent = "Dom Is Awesome";
-document.querySelector('.cta .cta-text button').textContent = "Get Started";
-document.getElementById('cta-img').src = "img/header-img.png";
+let ctaData = siteContent.cta;
+document.querySelector('.cta .cta-text h1').textContent = ctaData.h1;
+document.querySelector('.cta .cta-text button').textContent = ctaData.button;
+document.getElementById('cta-img').src = ctaData["img-src"];
 
 
 
@@ -73,38 +73,41 @@ document.getElementById('cta-img').src = "img/header-img.png";
 let topContent = document.querySelector('.top-content');
 let botContent = document.querySelector('.bottom-content');
 
+let mainData = siteContent["main-content"];
+
 // Set H4 Content
-topContent.children[0].children[0].textContent = "Features";
-topContent.children[1].children[0].textContent = "About";
+topContent.children[0].children[0].textContent = mainData["features-h4"];
+topContent.children[1].children[0].textContent = mainData["about-h4"];
 
 // Set p content
-topContent.children[0].children[1].textContent = "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-topContent.children[1].children[1].textContent = "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+topContent.children[0].children[1].textContent = mainData["features-content"];
+topContent.children[1].children[1].textContent = mainData["about-content"];
 
 // set image src
-document.getElementById('middle-img').src = "img/mid-page-accent.jpg";
+document.getElementById('middle-img').src = mainData["middle-img-src"];
 
 // Set h4 content for bottom
-botContent.children[0].children[0].textContent = "Services";
-botContent.children[1].children[0].textContent = "Product";
-botContent.children[2].children[0].textContent = "Vision";
+botContent.children[0].children[0].textContent = mainData["services-h4"];
+botContent.children[1].children[0].textContent = mainData["product-h4"];
+botContent.children[2].children[0].textContent = mainData["vision-h4"];
 
 // Set p content for bottom
-botContent.children[0].children[1].textContent = "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-botContent.children[1].children[1].textContent = "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-botContent.children[2].children[1].textContent = "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+botContent.children[0].children[1].textContent = mainData["services-content"];
+botContent.children[1].children[1].textContent = mainData["product-content"];
+botContent.children[2].children[1].textContent = mainData["vision-content"];
 
 
 
 // Contact section
+let conData = siteContent.contact;
 
 let contact = document.querySelector('.contact');
 
-contact.children[0].textContent = "Contact";
-contact.children[1].textContent = "123 Way 456 Street Somewhere, USA";
-contact.children[2].textContent = "1 (888) 888-8888";
-contact.children[3].textContent = "sales@greatidea.io";
+contact.children[0].textContent = conData["contact-h4"];
+contact.children[1].textContent = conData.address;
+contact.children[2].textContent = conData.phone;
+contact.children[3].textContent = conData.email;
 
 // Copyright section
 
-document.querySelector('footer p').textContent = "Copyright Great Idea! 2018";
+document.querySelector('footer p').textContent = siteContent.footer.copyright;
